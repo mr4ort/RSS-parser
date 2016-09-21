@@ -1,4 +1,5 @@
 "use strict";
 
-console.log('dasfasdf');
+import getData from './_getContentData';
 
+getData();
