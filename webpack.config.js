@@ -5,11 +5,10 @@ const webpack = require('webpack');
 
 module.exports = {
 
-  context: __dirname + '/app',
 
   entry: {
-    news:  "./news",
-    details: "./details"
+    news:  "./app/news.js",
+    details: "./app/details.js"
   },
 
   output: {
@@ -18,11 +17,12 @@ module.exports = {
     library:  "[name]"
   },
 
-  watch: false,
+  watch: true,
 
   watchOptions: {
-    aggregateTimeout: 100
+    //aggregateTimeout: 100
   },
+
 
   devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
 
@@ -60,7 +60,25 @@ module.exports = {
       }
     }]
 
+  },
+
+  devServer: {
+    contentBase: './dist',
+    //stats: 'minimal',
+    hot: true,
+    open: true,
+    colors: true
   }
+
+  //devServer: {
+  //  host: 'localhost', // default
+  //  port: 8080, // default
+  //  proxy: [{
+  //    path: /.*/,
+  //    target: 'http://localhost:3000'
+  //  }]
+  //}
+
 };
 
 
