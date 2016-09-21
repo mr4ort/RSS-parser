@@ -9,7 +9,7 @@ module.exports = {
 
   entry: {
     news:  "./news",
-    about: "./details"
+    details: "./details"
   },
 
   output: {
@@ -18,7 +18,7 @@ module.exports = {
     library:  "[name]"
   },
 
-  watch: true,
+  watch: false,
 
   watchOptions: {
     aggregateTimeout: 100
