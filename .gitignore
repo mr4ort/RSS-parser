@@ -7,4 +7,6 @@ node_modules
 bower_components
 input
 .ftppass
-dist/js/*.*
+dist/js/
+dist/js/common.js
+dist/js/news.js
