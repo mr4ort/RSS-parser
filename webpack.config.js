@@ -33,7 +33,8 @@ module.exports = {
       LANG:     JSON.stringify('ru')
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "common"
+      name: "common",
+      chunks: ["news", "details"]
     })
   ],
 
@@ -69,15 +70,6 @@ module.exports = {
     open: true,
     colors: true
   }
-
-  //devServer: {
-  //  host: 'localhost', // default
-  //  port: 8080, // default
-  //  proxy: [{
-  //    path: /.*/,
-  //    target: 'http://localhost:3000'
-  //  }]
-  //}
 
 };
 
