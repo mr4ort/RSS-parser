@@ -3,6 +3,8 @@
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 
+console.log(NODE_ENV);
+
 module.exports = {
 
 
@@ -17,7 +19,7 @@ module.exports = {
     library:  "[name]"
   },
 
-  watch: true,
+  watch: NODE_ENV === 'development',
 
   watchOptions: {
     aggregateTimeout: 100
@@ -35,6 +37,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
       chunks: ["news", "details"]
+    }),
+    new webpack.ProvidePlugin({
+      //pluck: 'lodash/collection/pluck',
+      //$: 'jquery'
     })
   ],
 
