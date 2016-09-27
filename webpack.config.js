@@ -40,7 +40,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       //pluck: 'lodash/collection/pluck',
-      //$: 'jquery'
+      $: 'jquery'
     })
   ],
 
@@ -62,8 +62,8 @@ module.exports = {
       test:   /\.js$/,
       loader: 'babel',
       query: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
+        presets: ['es2015']
+        //plugins: ['transform-runtime']
       }
     }]
 
