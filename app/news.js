@@ -2,4 +2,10 @@
 
 import getData from './_getContentData';
 
-getData();
+
+setTimeout(function () {
+ getData().then(function (data) {
+  console.log(data);
+ })
+}, 10000);
+

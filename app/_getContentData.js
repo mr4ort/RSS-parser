@@ -2,15 +2,20 @@
 
 export default function () {
 
-    let options = {
-        url: 'http://k.img.com.ua/rss/ua/news.xml',
-        crossDomain: true
-    };
+    let url = 'http://k.img.com.ua/rss/ua/news.xml';
 
-    $.ajax(options).done(function (data) {
-        console.log(data);
+    const x2JS = require('x2js');
+    let x2js = new x2JS();
+
+    let promise = new Promise(function (resolve, reject) {
+        $.get(url, function (response) {
+            let sXML =  new XMLSerializer().serializeToString(response);
+            let json = x2js.xml2js(sXML);
+            let data = json.rss.channel;
+            resolve(data);
+            reject('error');
+        });
     });
 
-
-
+    return promise;
 }
