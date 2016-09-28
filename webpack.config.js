@@ -65,6 +65,13 @@ module.exports = {
         presets: ['es2015']
         //plugins: ['transform-runtime']
       }
+    },{
+      test:   /\.html$/,
+      loader: '',
+      query: {
+        // presets: ['es2015']
+        //plugins: ['transform-runtime']
+      }
     }]
 
   },
